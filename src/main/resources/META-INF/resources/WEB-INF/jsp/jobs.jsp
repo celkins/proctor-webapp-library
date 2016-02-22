@@ -30,8 +30,8 @@
 
     <layout:javascript
             useCompiledJavascript="${session.useCompiledJavaScript}"
-            compiledJavascriptSrc="/static/scripts/app/matrix-list-compiled.js"
-            nonCompiledJavascriptSrc="/static/scripts/app/matrix-list.js"/>
+            compiledJavascriptSrc="${pageContext.request.contextPath}/static/scripts/app/matrix-list-compiled.js"
+            nonCompiledJavascriptSrc="${pageContext.request.contextPath}/static/scripts/app/matrix-list.js"/>
     <script type="text/javascript">
         //<![CDATA[
         indeed.proctor.app.jobs.start();

@@ -14,7 +14,7 @@
             <c:forEach items="${devApplications}" var="application">
                 <li>
                     <span class="label">${fn:escapeXml(application)}</span>
-                    <a class="ui-icon" href="/proctor/specification?branch=${proctor:urlencode("trunk")}&version=${application.version}&app=${proctor:urlencode(application.app)}">sp</a>
+                    <a class="ui-icon" href="${pageContext.request.contextPath}/proctor/specification?branch=${proctor:urlencode("trunk")}&version=${application.version}&app=${proctor:urlencode(application.app)}">sp</a>
                 </li>
             </c:forEach>
         </ul>
@@ -27,7 +27,7 @@
             <c:forEach items="${qaApplications}" var="application">
                 <li>
                     <span class="label">${fn:escapeXml(application)}</span>
-                    <a class="ui-icon" href="/proctor/specification?branch=${proctor:urlencode("qa")}&version=${application.version}&app=${proctor:urlencode(application.app)}">sp</a>
+                    <a class="ui-icon" href="${pageContext.request.contextPath}/proctor/specification?branch=${proctor:urlencode("qa")}&version=${application.version}&app=${proctor:urlencode(application.app)}">sp</a>
                 </li>
             </c:forEach>
         </ul>
@@ -39,7 +39,7 @@
         <ul class="nice">
             <c:forEach items="${productionApplications}" var="application">
                 <li><span class="label">${fn:escapeXml(application)}</span>
-                    <a class="ui-icon" href="/proctor/specification?branch=${proctor:urlencode("production")}&version=${application.version}&app=${proctor:urlencode(application.app)}">sp</a>
+                    <a class="ui-icon" href="${pageContext.request.contextPath}/proctor/specification?branch=${proctor:urlencode("production")}&version=${application.version}&app=${proctor:urlencode(application.app)}">sp</a>
                 </li>
             </c:forEach>
         </ul>

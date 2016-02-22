@@ -9,10 +9,10 @@
 
 <c:choose>
     <c:when test="${testDefinitionHistory != null && testDefinitionHistory.size() > 0 && testDefinitionHistory.get(0).definition != null}">
-        <a class="round label secondary mbl" href="/proctor/definition/${testName}?branch=${branch.name}&alloc_hist=#tab-history">Hide allocation history</a>
+        <a class="round label secondary mbl" href="${pageContext.request.contextPath}/proctor/definition/${testName}?branch=${branch.name}&alloc_hist=#tab-history">Hide allocation history</a>
     </c:when>
     <c:otherwise>
-        <a class="round label secondary mbl" href="/proctor/definition/${testName}?branch=${branch.name}&alloc_hist=1#tab-history">Load allocation history</a>
+        <a class="round label secondary mbl" href="${pageContext.request.contextPath}/proctor/definition/${testName}?branch=${branch.name}&alloc_hist=1#tab-history">Load allocation history</a>
     </c:otherwise>
 </c:choose>
 
@@ -26,9 +26,9 @@
     <div class="ui-def-hist-commit pbm mbm <c:if test="${isTrunkRevision}">ui-def-hist-trunk </c:if><c:if test="${isQaRevision}">ui-def-hist-qa </c:if><c:if test="${isProductionRevision}">ui-def-hist-production </c:if>">
         <c:if test="${isTrunkRevision || isQaRevision || isProductionRevision}">
             <div class="ui-tagbar ui-tagbar-right">
-                <c:if test="${isTrunkRevision}"><a class="mlm radius label" href="/proctor/definition/${testName}">TRUNK r${version.trunkVersion}</a></c:if>
-                <c:if test="${isQaRevision}"><a class="mlm radius label" href="/proctor/definition/${testName}?branch=qa">QA r${version.qaVersion}</a></c:if>
-                <c:if test="${isProductionRevision}"><a class="mlm radius label" href="/proctor/definition/${testName}?branch=production">PRODUCTION r${version.productionVersion}</a></c:if>
+                <c:if test="${isTrunkRevision}"><a class="mlm radius label" href="${pageContext.request.contextPath}/proctor/definition/${testName}">TRUNK r${version.trunkVersion}</a></c:if>
+                <c:if test="${isQaRevision}"><a class="mlm radius label" href="${pageContext.request.contextPath}/proctor/definition/${testName}?branch=qa">QA r${version.qaVersion}</a></c:if>
+                <c:if test="${isProductionRevision}"><a class="mlm radius label" href="${pageContext.request.contextPath}/proctor/definition/${testName}?branch=production">PRODUCTION r${version.productionVersion}</a></c:if>
             </div>
         </c:if>
         <span><proctor:formatRevisionDisplay revision="${testDefinitionVersion}"/></span>

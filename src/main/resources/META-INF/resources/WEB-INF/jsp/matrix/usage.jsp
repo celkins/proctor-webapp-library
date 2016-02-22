@@ -27,11 +27,11 @@
             <c:set var="inProductionMatrix" value="${proctor:containsKey(productionMatrix.testMatrixDefinition.tests, testName)}"/>
             <tr>
                 <td>
-                    <a href="/proctor/definition/${proctor:urlencode(testName)}"><h6>${fn:escapeXml(testName)}</h6></a>
+                    <a href="${pageContext.request.contextPath}/proctor/definition/${proctor:urlencode(testName)}"><h6>${fn:escapeXml(testName)}</h6></a>
                 </td>
                 <td>
                     <ul class="nice">
-                        <c:if test="${inDevMatrix}"><li><a class="label" href="/proctor/definition/${proctor:urlencode(testName)}">TRUNK MATRIX</a></li></c:if>
+                        <c:if test="${inDevMatrix}"><li><a class="label" href="${pageContext.request.contextPath}/proctor/definition/${proctor:urlencode(testName)}">TRUNK MATRIX</a></li></c:if>
                         <c:if test="${empty row.dev}"><li>[no webapps]</li></c:if>
                         <c:forEach items="${row.dev}" var="version">
                             <li><ui:compatible-result version="${version}" branch="trunk" /></li>
@@ -40,7 +40,7 @@
                 </td>
                 <td>
                     <ul class="nice">
-                        <c:if test="${inQaMatrix}"><li><a class="label" href="/proctor/definition/${proctor:urlencode(testName)}?branch=qa">QA MATRIX</a></li></c:if>
+                        <c:if test="${inQaMatrix}"><li><a class="label" href="${pageContext.request.contextPath}/proctor/definition/${proctor:urlencode(testName)}?branch=qa">QA MATRIX</a></li></c:if>
                         <c:if test="${empty row.qa}"><li>[no webapps]</li></c:if>
                         <c:forEach items="${row.qa}" var="version">
                             <li><ui:compatible-result version="${version}" branch="qa" /></li>
@@ -49,7 +49,7 @@
                 </td>
                 <td>
                     <ul class="nice">
-                        <c:if test="${inProductionMatrix}"><li><a class="label" href="/proctor/definition/${proctor:urlencode(testName)}?branch=production">PRODUCTION MATRIX</a></li></c:if>
+                        <c:if test="${inProductionMatrix}"><li><a class="label" href="${pageContext.request.contextPath}/proctor/definition/${proctor:urlencode(testName)}?branch=production">PRODUCTION MATRIX</a></li></c:if>
                         <c:if test="${empty row.production}"><li>[no webapps]</li></c:if>
                         <c:forEach items="${row.production}" var="version">
                             <li><ui:compatible-result version="${version}" branch="production" /></li>

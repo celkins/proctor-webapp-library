@@ -20,7 +20,7 @@
 <layout:base title="${testName} | Proctor" session="${session}" >
 
     <div>
-        <h2><span class="mrm">${fn:escapeXml(testName)}</span> (<a href="/proctor/definition/${proctor:urlencode(testName)}/edit">edit</a>)</h2>
+        <h2><span class="mrm">${fn:escapeXml(testName)}</span> (<a href="${pageContext.request.contextPath}/proctor/definition/${proctor:urlencode(testName)}/edit">edit</a>)</h2>
         <c:if test="${!empty testDefinition.description}"><h3 class="subheader">${fn:escapeXml(testDefinition.description)}</h3></c:if>
     </div>
     <div class="js-tabs-container">

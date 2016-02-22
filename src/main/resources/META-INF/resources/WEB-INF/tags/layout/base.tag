@@ -28,15 +28,15 @@
   <!-- Included CSS Files -->
     <c:choose>
         <c:when test="${session.useCompiledCSS}">
-            <link rel="stylesheet" href="/static/styles/styles-compiled.css">
+            <link rel="stylesheet" href="${pageContext.request.contextPath}/static/styles/styles-compiled.css">
         </c:when>
         <c:otherwise>
-            <link rel="stylesheet" href="/static/lib/normalize/normalize.css">
-            <link rel="stylesheet" href="/static/lib/foundation/stylesheets/foundation.css">
-            <link rel="stylesheet" href="/static/lib/oocss/mod.css">
-            <link rel="stylesheet" href="/static/lib/oocss/media.css">
-            <link rel="stylesheet" href="/static/lib/oocss/space.css">
-            <link rel="stylesheet" href="/static/styles/app.css">
+            <link rel="stylesheet" href="${pageContext.request.contextPath}/static/lib/normalize/normalize.css">
+            <link rel="stylesheet" href="${pageContext.request.contextPath}/static/lib/foundation/stylesheets/foundation.css">
+            <link rel="stylesheet" href="${pageContext.request.contextPath}/static/lib/oocss/mod.css">
+            <link rel="stylesheet" href="${pageContext.request.contextPath}/static/lib/oocss/media.css">
+            <link rel="stylesheet" href="${pageContext.request.contextPath}/static/lib/oocss/space.css">
+            <link rel="stylesheet" href="${pageContext.request.contextPath}/static/styles/app.css">
         </c:otherwise>
     </c:choose>
 
@@ -47,10 +47,10 @@
     <div class="page-container">
         <div class="hd">
             <ul class="nav-bar">
-                <li ><a href="/proctor/">Test Matrix</a></li>
-                <c:if test="${empty emptyClients || ! emptyClients}"> <li ><a href="/proctor/usage">Usage</a></li> </c:if>
-                <c:if test="${empty emptyClients || ! emptyClients}"> <li ><a href="/proctor/compatibility">Compatibility</a></li> </c:if>
-                <li><a href="/proctor/definition/create">Create new test</a></li>
+                <li ><a href="${pageContext.request.contextPath}/proctor/">Test Matrix</a></li>
+                <c:if test="${empty emptyClients || ! emptyClients}"> <li ><a href="${pageContext.request.contextPath}/proctor/usage">Usage</a></li> </c:if>
+                <c:if test="${empty emptyClients || ! emptyClients}"> <li ><a href="${pageContext.request.contextPath}/proctor/compatibility">Compatibility</a></li> </c:if>
+                <li><a href="${pageContext.request.contextPath}/proctor/definition/create">Create new test</a></li>
                 <proctor:renderBasePageInjectionTemplates position="<%=BasePageRenderer.BasePagePosition.NAVBAR_BUTTON%>" branch="${branch}"/>
                 <li class="nav-bar-right">
                     <dl class="sub-nav">
